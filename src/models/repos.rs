@@ -84,6 +84,8 @@ pub struct DiffEntry {
     pub previous_filename: Option<String>,
 }
 
+
+
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]
 #[non_exhaustive]
@@ -248,6 +250,34 @@ pub struct ContentLinks {
 #[serde(rename_all = "snake_case")]
 #[non_exhaustive]
 pub struct Branch {
+    pub name: String,
+    pub commit: CommitObject,
+    pub protected: bool,
+}
+
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
+#[non_exhaustive]
+pub struct Contributor {
+    pub login: String,
+    pub id: i64,
+    pub node_id: String,
+    pub avatar_url: Option<Url>,
+    pub gravatar_id: String,
+    pub url: Option<Url>,
+    pub html_url: Option<Url>,
+    pub followers_url: Option<Url>,
+    pub following_url: Option<Url>,
+    pub gists_url: Option<Url>,
+    pub starred_url: Option<Url>,
+    pub subscriptions_url: Option<Url>,
+    pub organizations_url: Option<Url>,
+    pub repos_url: Option<Url>,
+    pub events_url: Option<Url>,
+    pub received_events_url: Option<Url>,
+    pub r#type: String,
+    pub site_admin: bool,
+    pub contributions: i32,
     pub name: String,
     pub commit: CommitObject,
     pub protected: bool,
