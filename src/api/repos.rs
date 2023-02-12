@@ -4,6 +4,7 @@ use reqwest::header::ACCEPT;
 
 mod branches;
 mod commits;
+mod contributors;
 pub mod events;
 mod file;
 pub mod forks;
@@ -24,6 +25,7 @@ pub use stargazers::ListStarGazersBuilder;
 pub use status::{CreateStatusBuilder, ListStatusesBuilder};
 pub use tags::ListTagsBuilder;
 pub use branches::ListBranchesBuilder;
+pub use contributors::ListContributorsBuilder;
 
 /// Handler for GitHub's repository API.
 ///
@@ -376,6 +378,10 @@ impl<'octo> RepoHandler<'octo> {
     /// ```
     pub fn list_stargazers(&self) -> ListStarGazersBuilder<'_, '_> {
         ListStarGazersBuilder::new(self)
+    }
+
+    pub fn list_contributors(&self) -> ListContributorsBuilder<'_, '_> {
+        ListContributorsBuilder::new(self)
     }
 
     /// Creates a `ReleasesHandler` for the specified repository.

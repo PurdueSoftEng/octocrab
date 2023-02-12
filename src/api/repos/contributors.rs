@@ -1,7 +1,7 @@
 use super::*;
 
 #[derive(serde::Serialize)]
-pub struct ListContribsBuilder<'octo, 'r> {
+pub struct ListContributorsBuilder<'octo, 'r> {
     #[serde(skip)]
     handler: &'r RepoHandler<'octo>,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -10,8 +10,8 @@ pub struct ListContribsBuilder<'octo, 'r> {
     page: Option<u32>,
 }
 
-impl<'octo, 'r> ListContribsBuilder<'octo, 'r> {
-    pub fn new(handler: &'r RepoHandler<'octo>, sha: String) -> Self {
+impl<'octo, 'r> ListContributorsBuilder<'octo, 'r> {
+    pub fn new(handler: &'r RepoHandler<'octo>) -> Self {
         Self {
             handler,
             per_page: None,
