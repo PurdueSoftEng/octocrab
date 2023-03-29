@@ -186,4 +186,3 @@ octocrab::initialise(octocrab::Octocrab::builder());
 let octocrab = octocrab::instance();
 ```
 
-
