@@ -136,8 +136,8 @@ pub struct QueryHandler<'octo, 'query, T> {
     crab: &'octo Octocrab,
     #[serde(skip)]
     route: &'static str,
-    #[serde(skip)]
-    content_type: ContentType,
+    //#[serde(skip)]
+    //content_type: ContentType,
     #[serde(rename = "q")]
     query: &'query str,
     per_page: Option<u8>,
