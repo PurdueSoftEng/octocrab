@@ -151,7 +151,7 @@ pub struct QueryHandler<'octo, 'query, T> {
 impl<'octo, 'query, T> QueryHandler<'octo, 'query, T> {
     pub(crate) fn new(crab: &'octo Octocrab, route: &'static str, query: &'query str) -> Self {
         Self {
-            content_type: ContentType::Default,
+            //content_type: ContentType::Default,
             crab,
             order: None,
             page: None,
